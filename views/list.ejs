@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -7,12 +8,22 @@
   <body>
 
 
-    <%  if (kindofday === "tuesday" || kindofday ==="sunday"){   %>  //markers 
-        <h1 style="color: purple"><%=kindofday%>  ToDO List</h1>
-    <%  }else{   %>
-        <h1><%=kindofday%>  ToDO List</h1>
+  <h1><%=kindofday%></h1>
 
-    <%  }  %>
+  <ul>
+
+    <% for(var i = 0;i <newListItems.length; i++){ %>
+
+      <li><%= newListItems[i] %></li>
+
+
+     <%  } %>
+  </ul>
+
+  <form action="/" method="post">
+    <input type="text" name="newItem" >
+    <button type="submit" name="button">ADD</button>
+  </form>
 
   </body>
 </html>
